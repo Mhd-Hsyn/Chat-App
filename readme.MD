@@ -2,6 +2,15 @@
 
 This repository contains a Django project for a simple chat application with user authentication using JWT tokens. Below, we'll explain the project flow, API endpoints, and how scalability and security are handled.
 
+## Encryption and Decryption for User Messages
+
+User messages are encrypted before being stored in the database to ensure data security. This encryption is implemented using the Fernet symmetric encryption algorithm provided by the `cryptography` library. Each message is encrypted with a unique key, ensuring data confidentiality.
+
+During message retrieval, the encrypted messages are decrypted on-the-fly before being returned to the user. This ensures that users can view their messages in plaintext format while maintaining data security during storage.
+
+The encryption and decryption process adds an additional layer of security to the chat application, ensuring that user communication remains private and secure.
+
+
 ## Project Flow
 
 1. **User Authentication**: Users can sign up with a unique email and password. Passwords are hashed using PBKDF2 and validated. Upon successful signup, users receive JWT tokens, which are used for subsequent authentication.
@@ -44,6 +53,10 @@ This repository contains a Django project for a simple chat application with use
   - Authentication: Bearer token required.
 
 ## Scalability and Security
+
+## Encryption and Decryption for User Messages
+
+User messages are encrypted before storing them in the database and decrypted before being retrieved. This ensures that messages are secure and can only be viewed by authorized users.
 
 ### Scalability
 
