@@ -2,6 +2,10 @@
 
 This repository contains a Django project for a simple chat application with user authentication using JWT tokens. Below, we'll explain the project flow, API endpoints, and how scalability and security are handled.
 
+## Postman Collection
+
+[Postman Collection Link](https://api.postman.com/collections/28511271-a19e6abf-b624-4ad1-9b15-222d05802418?access_key={SECRET_KEY})
+
 ## Project Flow
 
 1. **User Authentication**: Users can sign up with a unique email and password. Passwords are hashed using PBKDF2 and validated. Upon successful signup, users receive JWT tokens, which are used for subsequent authentication.
